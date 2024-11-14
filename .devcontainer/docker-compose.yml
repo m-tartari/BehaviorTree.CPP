@@ -1,0 +1,19 @@
+services:
+  devcontainer:
+    image: behaviortree-dev
+    container_name: devcontainer-behaviortree
+    hostname: behaviortree-dev
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      # target: development
+    ports: ["1667:1667"]
+    command: sleep infinity
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      - ..:/workspaces/BehaviorTree.CPP:cached
+    # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined

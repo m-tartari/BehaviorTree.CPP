@@ -1,0 +1,10 @@
+services:
+  behaviortree:
+    image: behaviortree
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1667:1667"
+    # volumes:
+    #   - .:/workspaces/BehaviorTree.CPP
