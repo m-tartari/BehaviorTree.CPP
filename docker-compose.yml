@@ -1,6 +1,6 @@
 services:
   behaviortree:
-    image: behaviortree
+    image: behaviortree_cpp
     build:
       context: .
       dockerfile: Dockerfile
