@@ -29,6 +29,7 @@ CompileExample("t10_observer")
 
 if(BTCPP_GROOT_INTERFACE)
   CompileExample("t11_groot_howto")
+  CompileExample("t19_linfa_manager")
 endif()
 
 CompileExample("t12_default_ports")

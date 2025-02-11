@@ -142,6 +142,8 @@ list(APPEND BT_SOURCE
     src/loggers/bt_observer.cpp
 
     3rdparty/tinyxml2/tinyxml2.cpp
+
+    src/linfa/manager.cpp
     )
 
 
