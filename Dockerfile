@@ -15,4 +15,4 @@ RUN cmake .. -DCMAKE_TOOLCHAIN_FILE="conan_toolchain.cmake"
 RUN cmake --build . --parallel
 
 # This command runs your application, comment out this line to compile only
-CMD ["/workspaces/BehaviorTree.CPP/build/examples/t11_groot_howto"]
+CMD ["/workspaces/BehaviorTree.CPP/build/examples/t19_linfa_manager"]
