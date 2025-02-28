@@ -159,36 +159,36 @@ void Manager::serverLoop()
       case RequestType::GET_STATUS: {
         std::string status = toStatusStr(_p->status);
         reply_msg.addstr(status);
+        break;
       }
-      break;
       case RequestType::START: {
         _p->status = StatusType::STARTING;
+        break;
       }
-      break;
 
       case RequestType::STOP: {
         if(_p->status == StatusType::RUNNING || _p->status == StatusType::PAUSED)
         {
           _p->status = StatusType::STOPPING;
         }
+        break;
       }
-      break;
 
       case RequestType::PAUSE: {
         if(_p->status == StatusType::RUNNING)
         {
           _p->status = StatusType::PAUSED;
         }
+        break;
       }
-      break;
 
       case RequestType::RESUME: {
         if(_p->status == StatusType::PAUSED)
         {
           _p->status = StatusType::RUNNING;
         }
+        break;
       }
-      break;
 
       default: {
         sendErrorReply("Request not recognized");
