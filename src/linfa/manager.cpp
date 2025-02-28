@@ -190,6 +190,28 @@ void Manager::serverLoop()
         break;
       }
 
+      case RequestType::SET_TREE: {
+        if(requestMsg.size() != 2)
+        {
+          sendErrorReply("must be 2 parts message");
+          continue;
+        }
+
+        if(_p->status != StatusType::IDLE)
+        {
+          sendErrorReply("Cannot change tree while running");
+          continue;
+        }
+
+        _p->tree_xml = requestMsg[1].to_string();
+        break;
+      }
+
+      case RequestType::GET_TREE: {
+        reply_msg.addstr(_p->tree_xml);
+        break;
+      }
+
       default: {
         sendErrorReply("Request not recognized");
         continue;
