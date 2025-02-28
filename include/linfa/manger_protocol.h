@@ -37,6 +37,10 @@ enum RequestType : uint8_t
   PAUSE = 'P',
   // Resume the execution of the BT
   RESUME = 'p',
+  // Set Tree
+  SET_TREE = 'T',
+  // Get Tree
+  GET_TREE = 't',
 
   UNDEFINED = 0,
 };
@@ -55,6 +59,10 @@ inline const char* ToString(const RequestType& type)
       return "pause";
     case RequestType::RESUME:
       return "resume";
+    case RequestType::SET_TREE:
+      return "set_tree";
+    case RequestType::GET_TREE:
+      return "get_tree";
 
     case RequestType::UNDEFINED:
       return "undefined";
