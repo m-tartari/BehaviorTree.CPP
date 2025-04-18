@@ -24,10 +24,13 @@ namespace LINFA
  *  - request_type
  *  - protocol_id
  */
-
 enum RequestType : uint8_t
 {
-  // Request the staus of the BT executor
+  // Request the version of the BT executor
+  GET_BTCPP_VERSION = 'V',
+  // Request the status of the Manger executor
+  GET_MANAGER_VERSION = 'v',
+  // Request the status of the BT executor
   GET_STATUS = 'G',
   // Start the execution of the BT
   START = 'S',

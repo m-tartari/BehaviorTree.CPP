@@ -156,6 +156,17 @@ void Manager::serverLoop()
 
     switch(request_header.type)
     {
+      case RequestType::GET_BTCPP_VERSION: {
+        // Use the compile-time constant for the package version
+        reply_msg.addstr(BTCPP_LIBRARY_VERSION);
+        break;
+      }
+      case RequestType::GET_MANAGER_VERSION: {
+        // TODO: replace with the version of the library if detached from BT.CPP
+        // Use the compile-time constant for the package version
+        reply_msg.addstr(BTCPP_LIBRARY_VERSION);
+        break;
+      }
       case RequestType::GET_STATUS: {
         std::string status = toStatusStr(_p->status);
         reply_msg.addstr(status);
